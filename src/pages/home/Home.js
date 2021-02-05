@@ -1,6 +1,7 @@
 import React from "react";
 import "./Home.css";
 import Product from "../../components/product/Product";
+import Grid from "@material-ui/core/Grid";
 
 function Home() {
   return (
@@ -12,50 +13,66 @@ function Home() {
           alt=""
         />
         <div className="home__row">
-          <Product
-            id="12321341"
-            title="Champion LIFE Men's Reverse Weave Sweatshirt"
-            price={34.96}
-            rating={4}
-            image="https://m.media-amazon.com/images/I/41JWmgngULL._AC_SR320,400_.jpg"
-          />
-          <Product
-            id="49538094"
-            title="Kenwood kMix Stand Mixer for Baking, Stylish Kitchen Mixer with K-beater, Dough Hook and Whisk, 5 Litre Glass Bowl"
-            price={33.0}
-            rating={5}
-            image="https://m.media-amazon.com/images/I/81Cmz0EnsSL._AC_UL640_FMwebp_QL65_.jpg"
-          />
-          <Product
-            id="90829332"
-            title="SEASUM Women's High Waist Yoga Pants Tummy Control Slimming Booty Leggings Workout Running Butt Lift Tights"
-            price={30.98}
-            rating={5}
-            image="https://images-na.ssl-images-amazon.com/images/I/716Zk5MiWzL._AC_UL480_SR366,480_.jpg"
-          />
+          <Grid container spacing={1}>
+            <Grid item md={4} sm={6} xs={12}>
+              <Product
+                id="12321341"
+                title="Champion LIFE Men's Reverse Weave Sweatshirt"
+                price={34.96}
+                rating={4}
+                image="https://m.media-amazon.com/images/I/41JWmgngULL._AC_SR320,400_.jpg"
+              />
+            </Grid>
+            <Grid item md={4} sm={6} xs={12}>
+              <Product
+                id="49538094"
+                title="Kenwood kMix Stand Mixer for Baking, Stylish Kitchen Mixer with K-beater, Dough Hook and Whisk, 5 Litre Glass Bowl"
+                price={33.0}
+                rating={5}
+                image="https://m.media-amazon.com/images/I/81Cmz0EnsSL._AC_UL640_FMwebp_QL65_.jpg"
+              />
+            </Grid>
+            <Grid item md={4} sm={6} xs={12}>
+              <Product
+                id="90829332"
+                title="SEASUM Women's High Waist Yoga Pants Tummy Control Slimming Booty Leggings Workout Running Butt Lift Tights"
+                price={30.98}
+                rating={5}
+                image="https://images-na.ssl-images-amazon.com/images/I/716Zk5MiWzL._AC_UL480_SR366,480_.jpg"
+              />
+            </Grid>
+          </Grid>
         </div>
         <div className="home__row">
-          <Product
-            id="4903850"
-            title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor"
-            price={199.99}
-            rating={3}
-            image="https://images-na.ssl-images-amazon.com/images/I/71Swqqe7XAL._AC_SX466_.jpg"
-          />
-          <Product
-            id="23445930"
-            title="Amazon Echo (3rd generation) | Smart speaker with Alexa, Charcoal Fabric"
-            price={98.99}
-            rating={5}
-            image="https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$"
-          />
-          <Product
-            id="3254354345"
-            title="New Apple iPad Pro (12.9-inch, Wi-Fi, 128GB) - Silver (4th Generation)"
-            price={598.99}
-            rating={4}
-            image="https://images-na.ssl-images-amazon.com/images/I/816ctt5WV5L._AC_SX385_.jpg"
-          />
+          <Grid container spacing={2}>
+            <Grid item md={4} sm={6} xs={12}>
+              <Product
+                id="4903850"
+                title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor"
+                price={199.99}
+                rating={3}
+                image="https://images-na.ssl-images-amazon.com/images/I/71Swqqe7XAL._AC_SX466_.jpg"
+              />
+            </Grid>
+            <Grid item md={4} sm={6} xs={12}>
+              <Product
+                id="23445930"
+                title="Amazon Echo (3rd generation) | Smart speaker with Alexa, Charcoal Fabric"
+                price={98.99}
+                rating={5}
+                image="https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$"
+              />
+            </Grid>
+            <Grid item md={4} sm={6} xs={12}>
+              <Product
+                id="3254354345"
+                title="New Apple iPad Pro (12.9-inch, Wi-Fi, 128GB) - Silver (4th Generation)"
+                price={598.99}
+                rating={4}
+                image="https://images-na.ssl-images-amazon.com/images/I/816ctt5WV5L._AC_SX385_.jpg"
+              />
+            </Grid>
+          </Grid>
         </div>
       </div>
     </div>
