@@ -1,21 +1,14 @@
-import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "./pages/home/Home";
-import Cart from "./pages/cart/Cart";
 import Header from "./components/header/Header";
+import Routes from "./components/Routes";
+import { withRouter } from "react-router-dom";
 
-function App() {
+const App = ({ location }) => {
   return (
-    <Router>
-      <Header />
-      <div className="container">
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/cart" component={Cart} />
-        </Switch>
-      </div>
-    </Router>
+    <>
+      {location.pathname !== "/login" && <Header />}
+      <Routes />
+    </>
   );
-}
+};
 
-export default App;
+export default withRouter(App);
