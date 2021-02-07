@@ -120,7 +120,7 @@ function Checkout() {
         {/* Checkout section - Checkout method */}
         <div className="Checkout__section">
           <div className="Checkout__title">
-            <h3>Checkout Method</h3>
+            <h3>Payment Method</h3>
           </div>
           <div className="Checkout__details">
             {/* Stripe magic will go */}
