@@ -29,7 +29,7 @@ function Checkout() {
       const response = await axios({
         method: "post",
         // Stripe expects the total in a currencies subunits
-        url: `/checkouts/create?total=${getCartTotal(cart) * 100}`,
+        url: `/payments/create?total=${getCartTotal(cart) * 100}`,
       });
       setClientSecret(response.data.clientSecret);
     };
@@ -46,22 +46,20 @@ function Checkout() {
     setProcessing(true);
 
     const payload = await stripe
-      .confirmCardCheckout(clientSecret, {
-        Checkout_method: {
+      .confirmCardPayment(clientSecret, {
+        payment_method: {
           card: elements.getElement(CardElement),
         },
       })
-      .then(({ CheckoutIntent }) => {
-        // CheckoutIntent = Checkout confirmation
-
+      .then(({ paymentIntent }) => {
         db.collection("users")
           .doc(user?.uid)
           .collection("orders")
-          .doc(CheckoutIntent.id)
+          .doc(paymentIntent.id)
           .set({
             cart: cart,
-            amount: CheckoutIntent.amount,
-            created: CheckoutIntent.created,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
           });
 
         setSucceeded(true);
