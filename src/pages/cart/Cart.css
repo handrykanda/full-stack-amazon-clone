@@ -1,8 +1,9 @@
 .cart {
-  display: flex;
   padding: 20px;
   background-color: white;
   height: max-content;
+  align-items: center;
+  justify-content: center;
 }
 
 .cart__ad {
@@ -14,4 +15,10 @@
   margin-right: 10px;
   padding: 10px;
   border-bottom: 1px solid lightgray;
+}
+.cart__left {
+  width: 100%;
+}
+.cart__right {
+  width: 100%;
 }

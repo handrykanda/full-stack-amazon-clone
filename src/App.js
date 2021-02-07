@@ -4,6 +4,11 @@ import Routes from "./components/Routes";
 import { withRouter } from "react-router-dom";
 import { useStateValue } from "./data/StateProvider";
 import { auth } from "./util/firebase";
+// import { loadStripe } from "@stripe/stripe-js";
+// import { Elements } from "@stripe/react-stripe-js";
+// import { stripeKey } from "./util/config";
+
+// const promise = loadStripe(stripeKey);
 
 const App = ({ location }) => {
   const [{}, dispatch] = useStateValue();
