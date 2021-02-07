@@ -7,8 +7,12 @@
 }
 .home__image {
   width: 100%;
+  max-height: 450px;
+}
+.home__carousel {
+  width: 100%;
   z-index: -1000;
-  margin-bottom: -150px;
+  margin-bottom: -250px;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 .home__row {

@@ -1,5 +1,7 @@
 import React from "react";
 import "./Home.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 import Product from "../../components/product/Product";
 import Grid from "@material-ui/core/Grid";
 
@@ -7,11 +9,36 @@ function Home() {
   return (
     <div className="home">
       <div className="Home-container">
-        <img
-          className="home__image"
-          src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg"
-          alt=""
-        />
+        <Carousel
+          className="home__carousel"
+          infiniteLoop
+          autoPlay
+          showThumbs={false}
+          stopOnHover={false}
+        >
+          <div>
+            <img
+              className="home__image"
+              src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Hero/Fuji_TallHero_Computers_2x._CB432469748_.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              className="home__image"
+              src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Hero/Fuji_TallHero_Beauty_v2_en_US_2x._CB429089928_.jpg"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              className="home__image"
+              src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg"
+              alt=""
+            />
+          </div>
+        </Carousel>
+
         <div className="home__row">
           <Grid container spacing={1}>
             <Grid item md={4} sm={6} xs={12}>
