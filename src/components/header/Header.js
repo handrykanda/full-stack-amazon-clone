@@ -55,10 +55,12 @@ function Header() {
         </Link>
 
         {/* Orders */}
-        <div className="Header-option">
-          <span className="Header-optionLineOne">Returns</span>
-          <span className="Header-optionLineTwo">& Orders</span>
-        </div>
+        <Link to="/orders">
+          <div className="Header-option">
+            <span className="Header-optionLineOne">Returns</span>
+            <span className="Header-optionLineTwo">& Orders</span>
+          </div>
+        </Link>
         {/* Cart */}
         <Link to="/cart">
           <div className="Header-optionCart">

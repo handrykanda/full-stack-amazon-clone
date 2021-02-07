@@ -143,7 +143,13 @@ function Checkout() {
                   thousandSeparator={true}
                   prefix={"$"}
                 />
-                <button disabled={processing || disabled || succeeded}>
+                <button
+                  style={{
+                    opacity: (processing || disabled || succeeded) && 0.4,
+                    cursor: (processing || disabled || succeeded) && "wait",
+                  }}
+                  disabled={processing || disabled || succeeded}
+                >
                   <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
                 </button>
               </div>

@@ -1,7 +1,8 @@
 import axios from "axios";
+import { BASE_URL } from "./config";
 
 const instance = axios.create({
-  baseURL: "http://localhost:5001/ama-shop/us-central1/api",
+  baseURL: BASE_URL,
 });
 
 export default instance;
