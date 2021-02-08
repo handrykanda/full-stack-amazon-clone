@@ -145,8 +145,10 @@ function Checkout() {
                 />
                 <button
                   style={{
-                    opacity: (processing || disabled || succeeded) && 0.4,
-                    cursor: (processing || disabled || succeeded) && "wait",
+                    opacity:
+                      (processing || disabled || succeeded || error) && 0.4,
+                    cursor:
+                      (processing || disabled || succeeded || error) && "wait",
                   }}
                   disabled={processing || disabled || succeeded}
                 >
