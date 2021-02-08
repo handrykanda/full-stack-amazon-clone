@@ -94,7 +94,9 @@ function Header() {
           <Link to="/">
             <p>Help</p>
           </Link>
-          <Link to={!user && "/login"}>{user ? "Sign Out" : "Sign In"}</Link>
+          <Link onClick={handleAuthentication} to={!user && "/login"}>
+            {user ? "Sign Out" : "Sign In"}
+          </Link>
         </Menu>
       </div>
       <Link to="/">
