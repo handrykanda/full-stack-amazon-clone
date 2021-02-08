@@ -28,7 +28,15 @@ function Subtotal() {
         thousandSeparator={true}
         prefix={"$"}
       />
-      <button onClick={(e) => history.push("/checkout")}>
+      <button
+        onClick={(e) => {
+          if (cart?.length > 0) {
+            history.push("/checkout");
+          } else {
+            history.push("/");
+          }
+        }}
+      >
         Proceed to Checkout
       </button>
     </div>
