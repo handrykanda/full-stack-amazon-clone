@@ -6,28 +6,37 @@ import Cart from "../pages/cart/Cart";
 import Login from "../pages/login/Login";
 import Orders from "../pages/orders/Orders";
 import Checkout from "./StripeWrapper";
+import AuthRoute from "../util/AuthRoute";
 
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import { stripeKey } from "../util/config";
+import { useStateValue } from "../data/StateProvider";
 
 const promise = loadStripe(stripeKey);
-const Routes = () => (
-  <main>
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/cart" component={Cart} />
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/checkout" component={Checkout} />
-      <Route exact path="/orders" component={Orders} />
-    </Switch>
-  </main>
-);
+const Routes = () => {
+  const [{ cart, user }, dispatch] = useStateValue();
+  return (
+    <main>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/cart" component={Cart} />
+        <Route exact path="/login" component={Login} />
+        <AuthRoute
+          exact
+          path="/checkout"
+          authenticated={user !== null}
+          component={Checkout}
+        />
+        <AuthRoute
+          exact
+          path="/orders"
+          authenticated={user !== null}
+          component={Orders}
+        />
+      </Switch>
+    </main>
+  );
+};
 
 export default Routes;
-
-{
-  /* <Route path="/login" component={Login}>
-          { sessionStorage.getItem('state') ? <Redirect to="/" /> : undefined }
-          </Route> */
-}
