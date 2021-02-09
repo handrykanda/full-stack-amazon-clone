@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 import Routes from "./components/Routes";
 import { withRouter } from "react-router-dom";
 import { useStateValue } from "./data/StateProvider";
@@ -39,6 +40,7 @@ const App = ({ location }) => {
     <>
       {location.pathname !== "/login" && <Header />}
       <Routes />
+      {location.pathname !== "/login" && <Footer />}
     </>
   );
 };
