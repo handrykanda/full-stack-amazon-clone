@@ -133,7 +133,7 @@ function Footer({ order }) {
               </Link>
             </Typography>
             <Typography className="footer-item" variant="body1" gutterBottom>
-              <Link href="/orders" onClick={preventDefault} color="inherit">
+              <Link href="/orders" color="inherit">
                 Your Orders
               </Link>
             </Typography>
@@ -165,12 +165,7 @@ function Footer({ order }) {
           </Grid>
         </Grid>
       </div>
-      <Grid
-        className="footer-bottom-container"
-        container
-        justify="center"
-        alignItems="center"
-      >
+      <Grid className="footer-bottom-container" container justify="center">
         <Grid style={{ textAlign: "center" }} item md={4} sm={4} xs={12}></Grid>
         <Grid style={{ textAlign: "center" }} item md={1} sm={1} xs={12}>
           <Typography className="footer-item" variant="caption" gutterBottom>

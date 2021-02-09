@@ -68,11 +68,7 @@ function Header() {
     <div className="Header">
       <div className="Header-menu">
         <Menu left width={365} styles={styles} disableAutoFocus>
-          <Link
-            className="Header-menu-bar"
-            onClick={handleAuthentication}
-            to={!user && "/login"}
-          >
+          <Link className="Header-menu-bar" to={!user && "/login"}>
             {user ? `Hello, ${user.email}` : "Hello, Sign In"}
           </Link>
           <Link style={{ color: "#000000" }} to="/">
