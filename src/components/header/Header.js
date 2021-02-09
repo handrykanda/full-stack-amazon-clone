@@ -67,7 +67,12 @@ function Header() {
   return (
     <div className="Header">
       <div className="Header-menu">
-        <Menu left width="40%" styles={styles} disableAutoFocus>
+        <Menu
+          left
+          width={size.width >= 900 ? "30%" : "80%"}
+          styles={styles}
+          disableAutoFocus
+        >
           <Link className="Header-menu-bar" to={!user && "/login"}>
             {user ? `Hello, ${user.email}` : "Hello, Sign In"}
           </Link>
