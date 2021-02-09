@@ -32,9 +32,10 @@ const styles = {
   bmMenuWrap: {
     position: "fixed",
     height: "100%",
+    top: "0px",
   },
   bmMenu: {
-    background: "#0f1111",
+    background: "#ffffff",
     padding: "2.5em 1.5em 0",
     fontSize: "1.15em",
   },
@@ -49,7 +50,8 @@ const styles = {
     paddingBottom: "20px",
   },
   bmOverlay: {
-    background: "rgba(0, 0, 0, 0.3)",
+    background: "rgba(0, 0, 0, 0.85)",
+    top: "0px",
   },
 };
 
@@ -65,36 +67,55 @@ function Header() {
   return (
     <div className="Header">
       <div className="Header-menu">
-        <Menu left width={280} styles={styles} disableAutoFocus>
-          <Link to="/">Home</Link>
-          <Link to="/cart">Cart</Link>
-          <Link to="/orders">Returns & Orders</Link>
-          <Link to="/">Select your address</Link>
-          <Link to="/">
+        <Menu left width={365} styles={styles} disableAutoFocus>
+          <Link
+            className="Header-menu-bar"
+            onClick={handleAuthentication}
+            to={!user && "/login"}
+          >
+            {user ? `Hello, ${user.email}` : "Hello, Sign In"}
+          </Link>
+          <Link style={{ color: "#000000" }} to="/">
+            Home
+          </Link>
+          <Link style={{ color: "#000000" }} to="/cart">
+            Cart
+          </Link>
+          <Link style={{ color: "#000000" }} to="/orders">
+            Returns & Orders
+          </Link>
+          <Link style={{ color: "#000000" }} to="/">
+            Select your address
+          </Link>
+          <Link style={{ color: "#000000" }} to="/">
             <h3>Shop By Department</h3>
-            <hr style={{ color: "#737373" }} />
+            <hr style={{ color: "#F7F7F7" }} />
           </Link>
 
-          <Link to="/">
+          <Link style={{ color: "#000000" }} to="/">
             <p>Electronics</p>
           </Link>
-          <Link to="/">
+          <Link style={{ color: "#000000" }} to="/">
             <p>Computers</p>
           </Link>
-          <Link to="/">
+          <Link style={{ color: "#000000" }} to="/">
             <p>Smart Home</p>
           </Link>
-          <Link to="/">
+          <Link style={{ color: "#000000" }} to="/">
             <h3>Help & Settings</h3>
-            <hr style={{ color: "#737373" }} />
+            <hr style={{ color: "#F7F7F7" }} />
           </Link>
-          <Link to="/">
+          <Link style={{ color: "#000000" }} to="/">
             <p>Your Account</p>
           </Link>
-          <Link to="/">
+          <Link style={{ color: "#000000" }} to="/">
             <p>Help</p>
           </Link>
-          <Link onClick={handleAuthentication} to={!user && "/login"}>
+          <Link
+            style={{ color: "#000000" }}
+            onClick={handleAuthentication}
+            to={!user && "/login"}
+          >
             {user ? "Sign Out" : "Sign In"}
           </Link>
         </Menu>

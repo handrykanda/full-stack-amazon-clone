@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+import ScrollTop from "react-scrolltop-button";
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
@@ -8,6 +9,14 @@ function Footer({ order }) {
   const preventDefault = (event) => event.preventDefault();
   return (
     <div>
+      <ScrollTop
+        text="Back to top"
+        breakpoint={768}
+        style={{ backgroundColor: "#f0c14b" }}
+        className="scroll-your-role"
+        speed={500}
+        target={75}
+      />
       <div className="footer-top-container">
         <Grid
           style={{ maxWidth: "80%", margin: "auto" }}
