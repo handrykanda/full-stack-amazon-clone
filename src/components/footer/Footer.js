@@ -22,6 +22,7 @@ function Footer({ order }) {
           style={{ maxWidth: "80%", margin: "auto" }}
           container
           justify="center"
+          spacing={2}
         >
           <Grid item md={3} sm={3} xs={12}>
             <Typography className="footer-item" variant="h6" gutterBottom>
